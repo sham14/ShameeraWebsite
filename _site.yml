@@ -4,8 +4,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "FizzBuzz"
+    - text: "Problems"
       href: Journal.html
-    - text: "Snakes&Ladders"
+    - text: "Paper Analysis"
       href: Links.html
 output_dir: "docs"
