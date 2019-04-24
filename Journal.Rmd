@@ -14,9 +14,9 @@ output:
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
 
-# Problem 1
+# FizzBuzz Problem
 
-The code to for the FizzBuzz problem
+The code for the FizzBuzz problem
 
 ```{r}
 for (i in 1:100) {
@@ -30,53 +30,51 @@ for (i in 1:100) {
 }
 ```
 
-# Problem 2
+# Snakes and Ladders Problem
 
-Put numbers into variables, do simple math on the variables
-
-```{r}
-a<-1
-b<-2
-a+b
-
-d<-c(1,2,3)
-e<-c(5,6,7)
-d+e
-d*e
-d/e
-
-```
-
-# Problem 3
-
-Write code that will place the numbers 1 to 100 separately into a variable using for loop. Then, again using the seq function.
+The code for the snakes and ladders problem
 
 ```{r}
-# for loop solution
-# i becomes the number 1 to 100 at each step of the loop
-
-
-a <- length(100) # make empty variable, set length to 100
-for (i in 1:100){
-  a[i] <-i #assigns the number in i, to the ith index of a
+save_rolls <- c()
+for (sims in 1:1000){
+  current_tile<-1
+  number_of_rolls<-0
+  while(current_tile !=25 ){
+    number_of_rolls <- number_of_rolls+1
+    roll<-sample(c(1,2,3,4,5,6),1)
+    prev_curr_tile <- current_tile
+    current_tile <-current_tile+roll
+    
+    if (current_tile > 25){
+      current_tile <- prev_curr_tile
+    } else {
+      current_tile <- prev_curr_tile + roll
+    }
+    
+    if (current_tile == 3){
+      current_tile<-11
+    } else if (current_tile == 6){
+      current_tile<-17
+    } else if (current_tile == 9){
+      current_tile<-18
+    } else if (current_tile == 10){
+      current_tile<-12
+    } else if (current_tile == 14){
+      current_tile<-4
+    } else if (current_tile == 19){
+      current_tile<-8
+    } else if (current_tile == 22){
+      current_tile<-20
+    } else if (current_tile == 24){
+      current_tile<-16
+    } else {
+      current_tile <- current_tile
+    }
+  }
+  
+  save_rolls[sims] <- number_of_rolls
 }
-
-print(a)
-
-# for loop solution #2
-
-a<-c() #create empty variable using combine command
-for (i in 1:100){
-  a<-c(a,i) # keeps combining a with itself and the new number in i
-}
-print(a)
-
-# seq solution
-a <- seq(1,100,1) # look up help for seq using ?seq() in console
-print(a)
-
+avg<-mean(save_rolls)
+avg
 ```
 
-# Replace this with problem 4
-
-And keep going. Try to solve the problems with different scripts that provide the same solution. Good luck, Happy coding.
