@@ -1,5 +1,5 @@
 ---
-title: "Resources"
+title: "Psychology Paper Analysis"
 output: html_document
 ---
 
