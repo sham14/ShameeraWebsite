@@ -19,7 +19,7 @@ output: html_document
 
 # **Shameera Work**
 
-This is a template example for lab journaling. Students in Matt Crump's Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. 
+This is my Psyc 3400 honors assignment. It contains the code for the FizzBuzz problem and also the code for the Snakes and Ladders problem. These codes can be found in the 'Problems' tab. The 'Paper Analysis' contains my analysis for a psychology paper which was the second part of this assignment.
 
 ## How to use
 
