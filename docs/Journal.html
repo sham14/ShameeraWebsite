@@ -11,7 +11,7 @@
 
 
 
-<title>Journal</title>
+<title>FizzBuzz</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -403,61 +403,123 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Journal</h1>
+<h1 class="title toc-ignore">FizzBuzz</h1>
 
 </div>
 
 
-<p>IMPORTANT: You can delete everything in here and start fresh. You might want to start by not deleting anything above this line until you know what that stuff is doing.</p>
-<p>This is an .Rmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a # in front of your text, it will create a top level-header.</p>
-<div id="my-first-post" class="section level1">
-<h1>My first post</h1>
-<p>2018 | 7 | 23 Last compiled: 2019-04-24</p>
-<p>Notice that whatever you define as a top level header, automatically gets put into the table of contents bar on the left.</p>
-<div id="second-level-header" class="section level2">
-<h2>Second level header</h2>
-<p>You can add more headers by adding more hashtags. These won’t be put into the table of contents</p>
-<div id="third-level-header" class="section level3">
-<h3>third level header</h3>
-<p>Here’s an even lower level header</p>
-</div>
-</div>
-</div>
-<div id="my-second-post-note-the-order" class="section level1">
-<h1>My second post (note the order)</h1>
-<p>2018 | 7 | 23 Last compiled: 2019-04-24</p>
-<p>I’m writing this tutorial going from the top down. And, this is how it will be printed. So, notice the second post is second in the list. If you want your most recent post to be at the top, then make a new post starting at the top. If you want the oldest first, do, then keep adding to the bottom</p>
-</div>
-<div id="adding-r-stuff" class="section level1">
-<h1>Adding R stuff</h1>
-<p>So far this is just a blog where you can write in plain text and serve your writing to a webpage. One of the main purposes of this lab journal is to record your progress learning R. The reason I am asking you to use this process is because you can both make a website, and a lab journal, and learn R all in R-studio. This makes everything really convenient and in the sam place.</p>
-<p>So, let’s say you are learning how to make a histogram in R. For example, maybe you want to sample 100 numbers from a normal distribution with mean = 0, and standard deviation =1, and then you want to plot a histogram. You can do this right here by using an r code block, like this:</p>
-<pre class="r"><code>samples &lt;- rnorm(100, mean=0, sd=1)
-hist(samples)</code></pre>
-<p><img src="Journal_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>When you knit this R Markdown document, you will see that the histogram is printed to the page, along with the R code. This document can be set up to hide the R code in the webpage, just delete the comment (hashtag), from the cold folding option in the yaml header up top. For purposes of letting yourself see the code, and me see the code, best to keep it the way that it is. You learn all of these things and more can be customized in each R code block.</p>
-</div>
-<div id="the-big-idea" class="section level1">
-<h1>The big idea</h1>
-<p>Use this lab journal to record what you do in R. This way I will be able to see what you are doing and help you along the way. You will also be creating a repository of all the things you do. You can make posts about everything. Learning specific things in R (project unrelated), and doing things for the project that we will discuss at the beginning of the Fall semester. You can get started now by fiddling around with googling things, and trying stuff out in R. I’ve placed some helpful starting links in the links page on this website</p>
-</div>
-<div id="what-can-you-do-right-now-by-yourself" class="section level1">
-<h1>What can you do right now by yourself?</h1>
-<p>It’s hard to learn programming when you don’t have specific problems that you are trying to solve. Everything just seems abstract.</p>
-<p>I wrote an <a href="https://crumplab.github.io/programmingforpsych/">introductory programming book that introduces R</a>, and gives some <a href="https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html">concrete problems for you to solve</a>.</p>
-<p>To get the hang of journaling and solving the problems to learn programming, my suggestion is that you use this .Rmd file to solve the problems. It would look like this:</p>
-</div>
 <div id="problem-1" class="section level1">
 <h1>Problem 1</h1>
-<p>Do simple math with numbers, addition, subtraction, multiplication, division</p>
-<pre class="r"><code>1+2</code></pre>
-<pre><code>## [1] 3</code></pre>
-<pre class="r"><code>2*5</code></pre>
-<pre><code>## [1] 10</code></pre>
-<pre class="r"><code>5/3</code></pre>
-<pre><code>## [1] 1.666667</code></pre>
-<pre class="r"><code>(1+6+4)/5</code></pre>
-<pre><code>## [1] 2.2</code></pre>
+<p>The code to for the FizzBuzz problem</p>
+<pre class="r"><code>for (i in 1:100) {
+  if(i %% 3 ==0 &amp; i %% 5 !=0){
+    print(&quot;Fizz&quot;)
+  } else if(i %% 3 !=0 &amp; i %% 5 ==0){
+      print(&quot;Buzz&quot;)
+  } else if(i %% 3 !=0 &amp; i %% 5 !=0){
+      print(i)
+    } else {print(&quot;FizzBuzz&quot;)}
+}</code></pre>
+<pre><code>## [1] 1
+## [1] 2
+## [1] &quot;Fizz&quot;
+## [1] 4
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 7
+## [1] 8
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;
+## [1] 11
+## [1] &quot;Fizz&quot;
+## [1] 13
+## [1] 14
+## [1] &quot;FizzBuzz&quot;
+## [1] 16
+## [1] 17
+## [1] &quot;Fizz&quot;
+## [1] 19
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 22
+## [1] 23
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;
+## [1] 26
+## [1] &quot;Fizz&quot;
+## [1] 28
+## [1] 29
+## [1] &quot;FizzBuzz&quot;
+## [1] 31
+## [1] 32
+## [1] &quot;Fizz&quot;
+## [1] 34
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 37
+## [1] 38
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;
+## [1] 41
+## [1] &quot;Fizz&quot;
+## [1] 43
+## [1] 44
+## [1] &quot;FizzBuzz&quot;
+## [1] 46
+## [1] 47
+## [1] &quot;Fizz&quot;
+## [1] 49
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 52
+## [1] 53
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;
+## [1] 56
+## [1] &quot;Fizz&quot;
+## [1] 58
+## [1] 59
+## [1] &quot;FizzBuzz&quot;
+## [1] 61
+## [1] 62
+## [1] &quot;Fizz&quot;
+## [1] 64
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 67
+## [1] 68
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;
+## [1] 71
+## [1] &quot;Fizz&quot;
+## [1] 73
+## [1] 74
+## [1] &quot;FizzBuzz&quot;
+## [1] 76
+## [1] 77
+## [1] &quot;Fizz&quot;
+## [1] 79
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 82
+## [1] 83
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;
+## [1] 86
+## [1] &quot;Fizz&quot;
+## [1] 88
+## [1] 89
+## [1] &quot;FizzBuzz&quot;
+## [1] 91
+## [1] 92
+## [1] &quot;Fizz&quot;
+## [1] 94
+## [1] &quot;Buzz&quot;
+## [1] &quot;Fizz&quot;
+## [1] 97
+## [1] 98
+## [1] &quot;Fizz&quot;
+## [1] &quot;Buzz&quot;</code></pre>
 </div>
 <div id="problem-2" class="section level1">
 <h1>Problem 2</h1>
