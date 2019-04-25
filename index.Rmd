@@ -25,9 +25,3 @@ This is my Psyc 3400 honors assignment. It contains the code for the FizzBuzz pr
 </div>
 <div class="col-sm-6">
 
-### [I don't know how to remove this picture so here it is](https://crumplab.github.io)
-
-<a href = "https://crumplab.github.io">
-![](images/logo.png)
-</a>
-</div>
