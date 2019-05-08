@@ -16,6 +16,58 @@ output:
 
 # Re-analysis
 
+```{r}
+library(data.table)
+df <- fread("~/Desktop/psyc 3400/paper analysis/ExpectTMS/R scripts/expectancy.csv")
+```
+
+```{r}
+library(reshape)
+library(ez)
+data.wide <- read.csv('~/Desktop/psyc 3400/paper analysis/ExpectTMS/R scripts/expectancy.csv')
+
+data.melt <- melt(data.wide, id.var="subject", variable_name="labels")
+data.melt$labels <- as.character(data.melt$labels)
+data.melt$type <- substr(data.melt$labels, 1,2)
+data.melt$run <- substr(data.melt$labels, 3,3)
+data.long <- data.frame(subject=data.melt$subject, type=data.melt$type, run=data.melt$run, exp=data.melt$value)
+
+data.long$exp <- 10-data.long$exp
+ezANOVA(
+  data = data.long 
+  , dv = .(exp)
+  , wid = .(subject)
+  , within = .(type, run)
+  , detailed = T
+)
+
+source("pairwise_comparisons.R") 
+TES(10-data.wide$no5, 10-data.wide$go1, paired = TRUE)
+TES(10-data.wide$go1, 10-data.wide$go2, paired = TRUE)
+TES(10-data.wide$go5, 10-data.wide$no1, paired = TRUE)
+TES(10-data.wide$no1, 10-data.wide$no2, paired = TRUE)
+```
+
+```{r}
+library(dplyr)
+
+
+mean_accuracies <- data.long %>%
+                    group_by(type,run) %>%
+                    summarise(mean_accuracies = mean(exp))
+```
+
+
+```{r}
+S_accuracies <- data.long %>%
+                    mutate(subject = as.factor(subject),
+                           type = as.factor(type),
+                           run  = as.factor(run)) %>%
+                    group_by(subject,type,run) %>%
+                    summarise(mean_accuracies = mean(exp))
+
+summary(aov(mean_accuracies ~ type*run + Error(subject/(type*run)), S_accuracies))
+```
 
 
 # Re-analysis discussion
