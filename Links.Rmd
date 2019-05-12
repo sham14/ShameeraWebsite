@@ -67,6 +67,10 @@ mean_accuracies <- data.long %>%
 ```
 
 
+
+
+
+Within-subjects ANOVA code
 ```{r}
 S_accuracies <- data.long %>%
                     mutate(subject = as.factor(subject),
