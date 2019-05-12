@@ -32,8 +32,10 @@ for (i in 1:100) {
 
 # Snakes and Ladders Problem
 
-The code for the snakes and ladders problem
+![snakes and ladders board](images/board.jpg)
 
+
+The code for the snakes and ladders problem
 ```{r}
 save_rolls <- c()
 for (sims in 1:1000){
