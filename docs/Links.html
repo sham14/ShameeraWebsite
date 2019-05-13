@@ -508,7 +508,7 @@ TES(10-data.wide$no5, 10-data.wide$go1, paired = TRUE)</code></pre>
 <pre class="r"><code>mean_accuracies &lt;- data.long %&gt;%
                     group_by(type,run) %&gt;%
                     summarise(mean_accuracies = mean(exp))</code></pre>
-<p>Within-subjects ANOVA code</p>
+<p>Within-subjects ANOVA code for the effect of run position and run type on expectancy ratings</p>
 <pre class="r"><code>S_accuracies &lt;- data.long %&gt;%
                     mutate(subject = as.factor(subject),
                            type = as.factor(type),
