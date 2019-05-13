@@ -17,7 +17,7 @@ output: html_document
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
-# **Shameera Work**
+# **Psyc 3400 Assignment - Shameera**
 
 This is my Psyc 3400 honors assignment. It contains the code for the FizzBuzz problem and also the code for the Snakes and Ladders problem. These codes can be found in the 'Problems' tab. The 'Paper Analysis' contains my analysis for a psychology paper which was the second part of this assignment.
 
